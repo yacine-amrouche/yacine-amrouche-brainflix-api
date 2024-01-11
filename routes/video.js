@@ -8,7 +8,7 @@ const { v4: uuidv4 } = require("uuid");
 router.get("/", (req, res) =>{
     const videosJASON = fs.readFileSync("./data/videos.json")
     const videos = JSON.parse(videosJASON)
-    res.json(videos);
+    res.status(200).json(videos);
 });
 
 router.get("/:id", (req, res) =>{
@@ -16,7 +16,7 @@ router.get("/:id", (req, res) =>{
     const videosJASON = fs.readFileSync("./data/videos.json")
     const videos = JSON.parse(videosJASON)
     const videoDisplay = videos.find(video => video.id === videoId)
-    res.json(videoDisplay);
+    res.status(200).json(videoDisplay);
 });
 
 router.post("/", (req, res) =>{
