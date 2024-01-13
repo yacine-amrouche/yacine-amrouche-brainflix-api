@@ -10,8 +10,11 @@ app.use(express.json());
 const PORT = process.env.PORT || 5000;
 const CORS_ORIGIN = process.env.CORS_ORIGIN || "http://localhost:3000";
 app.use(cors({ origin: CORS_ORIGIN }));
-app.use("/photos", express.static("./public.images"));
+app.use("/photos", express.static("./public/images"));
 app.use("/videos", videosRoute)
+
+
+
 
 
 

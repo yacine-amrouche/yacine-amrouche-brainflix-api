@@ -13,7 +13,7 @@ router.get("/", (req, res) =>{
 
 router.get("/:id", (req, res) =>{
     const videoId = req.params.id
-    const videosJASON = fs.readFileSync("./data/videos.json")
+    const videosJASON = fs.readFileSync("./data/videos-data.json")
     const videos = JSON.parse(videosJASON)
     const videoDisplay = videos.find(video => video.id === videoId)
     res.status(200).json(videoDisplay);
